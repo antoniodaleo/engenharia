@@ -8,4 +8,4 @@ $route['translate_uri_dashes'] = FALSE;
 $route['post/p'] = "Base";
 $route['post/p/(:num)'] = "Base";
 
-$route['restrito'] = 'restrito/home/index';
+$route['restrito'] = 'restrita/home/index';

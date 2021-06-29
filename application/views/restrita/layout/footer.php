@@ -1,25 +1,72 @@
-<footer class="py-4 bg-light mt-auto">
-    <div class="container-fluid px-4">
-        <div class="d-flex align-items-center justify-content-between small">
-            <div class="text-muted">Copyright &copy; Your Website 2021</div>
-                <div>
-                    <a href="#">Privacy Policy</a>
-                        &middot;
-                    <a href="#">Terms &amp; Conditions</a>
-                </div>
+    <!-- Footer -->
+      <?php if(!$this->router->fetch_class()=='login'): ?>
+        
+        <footer class="sticky-footer bg-white">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright &copy; System ordem <?php echo date('Y') ?> </span>
             </div>
+          </div>
+        </footer>
+      
+      <?php endif;  ?>
+
+      
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Pronto para sair? </h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
         </div>
-</footer>
-</div>
-</div>
+        <div class="modal-body">Clique em Logout para encerrar a sessão; </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary btn-sm" type="button" data-dismiss="modal">Não</button>
+          <a class="btn btn-primary btn-sm" href="<?php echo base_url('login/logout')?>">Sair</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="<?php echo base_url('assets/restrita/vendor/jquery/jquery.min.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/restrita/vendor/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="<?php echo base_url('assets/restrita/vendor/jquery-easing/jquery.easing.min.js'); ?>"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="<?php echo base_url('assets/restrita/js/sb-admin-2.min.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/restrita/js/util.js'); ?>"></script>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="<?php echo base_url('assets/restrita/js/scripts.js') ?>"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-    <script src="<?php echo base_url('assets/restrita/demo/chart-area-demo.js') ?>"></script>
-    <script src="<?php echo base_url('assets/restrita/demo/chart-bar-demo.js') ?>"></script>
-    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-    <script src="<?php echo base_url('assets/restrita/js/datatables-simple-demo.js') ?>"></script>
+  <?php if(isset($scripts)): ?>
+
+    <?php foreach($scripts as $script):  ?>
+        <script src="<?php echo base_url('assets/restrita/'.$script) ;?>"> </script>
+    <?php endforeach; ?>
+  
+  <?php endif; ?>
+
+  <script>
+    CKEDITOR.replace('post_body'); 
+  </script>
+
 </body>
+
 </html>

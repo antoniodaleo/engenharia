@@ -1,36 +1,54 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Login extends CI_Controller {
+    defined('BASEPATH' ) OR exit('ação não permitida'); 
 
-	public function index()
-	{
-		$data = array(
-			'titulo' => 'Login de usuario', 
-		); 
-
-		$this->load->view('restrita/layout/header', $data);
-		$this->load->view('restrita/login/index');
-		$this->load->view('restrita/layout/footer');
-	}
+    class Login extends CI_Controller{
 
 
-	public function auth(){
-		$identity = $this->input->post('email'); 
-		$password = $this->input->post('password'); 
-		$remember = ($this->input->post('remember' ? TRUE:FALSE));
+        public function index(){
+            //echo '<pre>'; 
+            //print_r($this->input->post()); 
+            //exit(); 
+            
+            $data = array(
+                'titulo' => 'Login', 
+            );                 
+            
+            
+            $this->load->view('restrita/layout/header',$data);
+            $this->load->view('restrita/login/index'); 
+            $this->load->view('restrita/layout/footer');
+        
+        }
+        
+        public function auth(){
+            
+            //echo '<pre>'; 
+            //print_r($this->input->post()); 
+            //exit(); 
+            
+            $identity = $this->security->xss_clean($this->input->post('email')); 
+            $password = $this->security->xss_clean($this->input->post('password'));
+            $remember = FALSE; // remember the user
 
-		if($this->ion_auth->login($identity , $password , $remember)){
-			$this->session->set_flashdata('sucesso', 'Seja muito bem vindo'); 
-			redirect('restrita/home'); 
-		}else{
-			$this->session->set_flashdata('erro', 'Por favor verifique suas credenciais de acesso');
-			redirect('restrita/login'); 
-		}
+            if($this->ion_auth->login($identity, $password, $remember)){
+                redirect('restrita/home'); 
+            }else{
+                $this->session->set_flashdata('error', 'Verifique seu e-mail ou senha');
+                redirect('restrita/login'); 
+            }
+            
+           
+        }
 
-	}
+        public function logout(){
+            $this->ion_auth->logout();
+            redirect('restrita/login');
+        }
 
-	public function logout(){
-		$this->ion_auth->logout(); 
-	}
-}
+        /*
+            [email] => admin
+            [password] => password
+        */
+
+    }
