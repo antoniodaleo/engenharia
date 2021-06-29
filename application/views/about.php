@@ -4,8 +4,8 @@
 <section class="page-header padding">
     <div class="container">
         <div class="page-content text-center">
-        <h2>About us</h2>
-        <p>Construction & Building Html Template.</p>
+        <h2>Sobre Nós</h2>
+        <p>Construcoes e Mecanicas</p>
         </div>
     </div>
 </section>
