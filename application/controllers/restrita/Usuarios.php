@@ -20,7 +20,7 @@
             
             if(!$this->ion_auth->is_admin()){
                 $this->session->set_flashdata('info','Você não tem permissao para acessar este menu'); 
-                redirect('home'); 
+                redirect('restrita/home'); 
             }
             
             $data = array(
@@ -46,9 +46,9 @@
             //exit(); 
           
 
-            $this->load->view('layout/header',$data);
-            $this->load->view('usuarios/index');
-            $this->load->view('layout/footer',); 
+            $this->load->view('restrita/layout/header',$data);
+            $this->load->view('restrita/usuarios/index');
+            $this->load->view('restrita/layout/footer',); 
 
         }
             
@@ -58,7 +58,7 @@
                 
                 if ($this->session->userdata('user_id') != $usuario_id){
                     $this->session->set_flashdata('info', 'Voce nao pode editar um usuario diferente do seu'); 
-                    redirect('home'); 
+                    redirect('restrita/home'); 
                 }
             }
             //$user_session = $this->session->userdata('user_id'); 
@@ -66,7 +66,7 @@
             if(!$usuario_id ||  !$this->ion_auth->user($usuario_id)->row()){
                 
                 $this->session->set_flashdata('error', 'Usuario não encontrado');
-                redirect('usuarios');  
+                redirect('restrita/usuarios');  
                 //exit('Usuario não cadastrado');
             
             }else{
@@ -127,9 +127,9 @@
 
                     if($this->ion_auth->is_admin()){
                         
-                        redirect('usuarios'); 
+                        redirect('restrita/usuarios'); 
                     }else{
-                        redirect('home'); 
+                        redirect('restrita/home'); 
                     }
         
   
@@ -142,9 +142,9 @@
                     ); 
                     
                     
-                    $this->load->view('layout/header',$data);
-                    $this->load->view('usuarios/edit');
-                    $this->load->view('layout/footer');
+                    $this->load->view('restrita/layout/header',$data);
+                    $this->load->view('restrita/usuarios/edit');
+                    $this->load->view('restrita/layout/footer');
 
                 }
             }
@@ -189,7 +189,7 @@
             
             if(!$this->ion_auth->is_admin()){
                 $this->session->set_flashdata('info','Você não tem permissao para acessar este menu'); 
-                redirect('home'); 
+                redirect('restrita/home'); 
             }
             
 
@@ -232,7 +232,7 @@
                     $this->session->set_flashdata('error','Erro ao salvar os dados');
                 }
 
-                redirect('usuarios'); 
+                redirect('restrita/usuarios'); 
                 //exit('Validado');
             }else{
 
@@ -241,9 +241,9 @@
                     'titulo' => 'Cadastrar Usuario',
                 ); 
 
-                $this->load->view('layout/header',$data);
-                $this->load->view('usuarios/add');
-                $this->load->view('layout/footer');
+                $this->load->view('restrita/layout/header',$data);
+                $this->load->view('restrita/usuarios/add');
+                $this->load->view('restrita/layout/footer');
     
             }
 
@@ -254,25 +254,25 @@
 
             if(!$this->ion_auth->is_admin()){
                 $this->session->set_flashdata('info','Você não tem permissao para acessar este menu'); 
-                redirect('home'); 
+                redirect('restrita/home'); 
             }
 
             if(!$usuario_id || !$this->ion_auth->user($usuario_id)->row()){
                 $this->session->set_flashdata('error', 'Usuario não encontrado');
-                redirect('usuarios'); 
+                redirect('restrita/usuarios'); 
             }
 
             if($this->ion_auth->is_admin($usuario_id)){
                 $this->session->set_flashdata('error', 'Admin não pode ser excluido');
-                redirect('usuarios'); 
+                redirect('restrita/usuarios'); 
             }
 
             if($this->ion_auth->delete_user($usuario_id)){
                 $this->session->set_flashdata('sucesso', 'Usuario excluido com sucesso');
-                redirect('usuarios'); 
+                redirect('restrita/usuarios'); 
             }else{
                 $this->session->set_flashdata('error', 'Admin não pode ser excluido');
-                redirect('usuarios'); 
+                redirect('restrita/usuarios'); 
             }
             
         }

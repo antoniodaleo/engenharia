@@ -11,7 +11,17 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('layout/header');
+		$data = array(
+			'sistema' => $this->core_model->get_by_id('sistema', array('sistema_id'=>1)), 
+		);
+
+		/* 
+		echo '<pre>'; 
+		print_r($data['sistema']); 
+		exit(); 
+		*/
+
+		$this->load->view('layout/header',$data);
 		$this->load->view('home'); 
 		$this->load->view('layout/footer');
 	}

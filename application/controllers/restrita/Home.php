@@ -21,9 +21,10 @@ class Home extends CI_Controller {
 
 		$data = array(
 			'titulo' => 'Home', 
-
 		);
 
+
+		
 
 		$this->load->view('restrita/layout/header', $data); 
 		$this->load->view('restrita/home/index');

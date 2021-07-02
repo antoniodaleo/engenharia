@@ -1,20 +1,20 @@
 
 
-        <?php $this->load->view('layout/sidebar'); ?>
+    <?php $this->load->view('restrita/layout/sidebar'); ?>
 
     
 
       <!-- Main Content -->
       <div id="content">
 
-        <?php $this->load->view('layout/navbar'); ?>
+        <?php $this->load->view('restrita/layout/navbar'); ?>
        
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="<?php echo base_url('usuarios') ?>">Usuario</a></li>
+            <li class="breadcrumb-item"><a href="<?php echo base_url('restrita/usuarios') ?>">Usuario</a></li>
             <li class="breadcrumb-item active" aria-current="page"><?php echo $titulo ;?></li>
           </ol>
         </nav>
@@ -24,7 +24,7 @@
           <div class="card shadow mb-4">
             <!-- Link para voltar menu Usuario -->
             <div class="card-header py-3">
-              <a title="Voltar" href="<?php echo base_url('usuarios'); ?>" class="btn btn-success btn-sm float-right" > <i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</a>
+              <a title="Voltar" href="<?php echo base_url('restrita/usuarios'); ?>" class="btn btn-success btn-sm float-right" > <i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</a>
             </div>
 
             <!-- Formulario -->

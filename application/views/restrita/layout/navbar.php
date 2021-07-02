@@ -124,7 +124,7 @@
     </a>
     <!-- Dropdown - User Information -->
     <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-      <a class="dropdown-item" href="<?php echo base_url('usuarios/edit/'.$this->session->userdata('user_id')); ?>">
+      <a class="dropdown-item" href="<?php echo base_url('restrita/usuarios/edit/'.$this->session->userdata('user_id')); ?>">
         <i class="far fa-user fa-sm fa-fw mr-2 text-gray-900"></i>
         Perfil
       </a>

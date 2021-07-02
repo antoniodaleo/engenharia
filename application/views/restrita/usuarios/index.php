@@ -1,13 +1,12 @@
 
 
-      <?php $this->load->view('layout/sidebar'); ?>
+      <?php $this->load->view('restrita/layout/sidebar'); ?>
 
     
-
       <!-- Main Content -->
       <div id="content">
 
-        <?php $this->load->view('layout/navbar'); ?>
+        <?php $this->load->view('restrita/layout/navbar'); ?>
        
         <!-- Begin Page Content -->
         <div class="container-fluid">
@@ -52,7 +51,7 @@
         <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <a title="Cadastrar novo usuario" href="<?php echo base_url('usuarios/add'); ?>" class="btn btn-success btn-sm float-right" > <i class="fa fa-plus" aria-hidden="true"></i> Novo</a>
+              <a title="Cadastrar novo usuario" href="<?php echo base_url('restrita/usuarios/add'); ?>" class="btn btn-success btn-sm float-right" > <i class="fa fa-plus" aria-hidden="true"></i> Novo</a>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -79,7 +78,7 @@
                           
                             
                             <td class="text-right">
-                              <a href="<?php echo base_url('usuarios/edit/'.$user->id)?>" class="btn btn-sm btn-primary"><i class="fa fa-user-plus" aria-hidden="true"></i> Editar</a>
+                              <a href="<?php echo base_url('restrita/usuarios/edit/'.$user->id)?>" class="btn btn-sm btn-primary"><i class="fa fa-user-plus" aria-hidden="true"></i> Editar</a>
                               <a href="javascript(void)" data-toggle="modal" data-target="#user-<?php echo $user->id; ?>" class="btn btn-sm btn-danger"><i class="fa fa-user-times" aria-hidden="true"></i> Excluir</a>
                             </td>
                         </tr>
@@ -98,7 +97,7 @@
                               <div class="modal-body">Se você deseja realmente deletar o usuario clique em <strong>Sim</strong> </div>
                               <div class="modal-footer">
                                 <button class="btn btn-secondary btn-sm" type="button" data-dismiss="modal">Não</button>
-                                <a class="btn btn-danger btn-sm" href="<?php echo base_url('usuarios/del/'.$user->id) ?>">Sim</a>
+                                <a class="btn btn-danger btn-sm" href="<?php echo base_url('restrita/usuarios/del/'.$user->id) ?>">Sim</a>
                               </div>
                             </div>
                           </div>

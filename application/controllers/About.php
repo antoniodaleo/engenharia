@@ -11,7 +11,16 @@ class About extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('layout/header');
+
+		$data = array(
+			'about' => $this->core_model->get_by_id('about', array('about_id'=>1))  , 
+			'sistema' => $this->core_model->get_by_id('sistema', array('sistema_id'=>1)), 
+
+		); 
+		
+		
+
+		$this->load->view('layout/header', $data);
 		$this->load->view('about'); 
 		$this->load->view('layout/footer');
 	}

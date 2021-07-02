@@ -21,7 +21,7 @@
 </div>
 
 <div class="header-right">
-<a class="menu-btn" href="<?php echo base_url('contact') ?>">Faça um preventivo</a>
+<a class="menu-btn" href="<?php echo base_url('contact') ?>">Orçamento</a>
 
 <div class="mobile-menu-icon">
     <div class="burger-menu">
