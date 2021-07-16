@@ -55,7 +55,7 @@
                   </div>
                 </div>
                 <div>
-                  <div class="small text-gray-500"><?php echo formata_data_banco_sem_hora(date('Y-m-d')) ;?></div>
+                  <div class="small text-gray-500"><?php //echo formata_data_banco_sem_hora(date('Y-m-d')) ;?></div>
                   Existem contas a receber vencidas!
                 </div>
               </a>
@@ -70,7 +70,7 @@
                   </div>
                 </div>
                 <div>
-                  <div class="small text-gray-500"><?php echo formata_data_banco_sem_hora(date('Y-m-d')) ;?></div>
+                  <div class="small text-gray-500"><?php //echo formata_data_banco_sem_hora(date('Y-m-d')) ;?></div>
                   Existem contas a pagar vencidas!
                 </div>
               </a>
@@ -84,7 +84,7 @@
                   </div>
                 </div>
                 <div>
-                  <div class="small text-gray-500"><?php echo formata_data_banco_sem_hora(date('Y-m-d')) ;?></div>
+                  <div class="small text-gray-500"><?php //echo formata_data_banco_sem_hora(date('Y-m-d')) ;?></div>
                   Existem contas a pagar que vencem hoje!
                 </div>
               </a>
@@ -99,7 +99,7 @@
                   </div>
                 </div>
                 <div>
-                  <div class="small text-gray-500"><?php echo formata_data_banco_sem_hora(date('Y-m-d')) ;?></div>
+                  <div class="small text-gray-500"><?php //echo formata_data_banco_sem_hora(date('Y-m-d')) ;?></div>
                   Existem usuarios desativados!
                 </div>
               </a>

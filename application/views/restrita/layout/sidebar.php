@@ -36,9 +36,11 @@
         <div id="collapseOne" class="collapse" aria-labelledby="collapseOne" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Escolha uma opção:</h6>
-            <a title="Gerenciar Home" class="collapse-item" href="<?php echo base_url('restrita/site'); ?>"><i class="fas fa-home"></i></i>&nbsp; Home</a>
+            <a title="Gerenciar Home" class="collapse-item" href="<?php echo base_url('restrita/home'); ?>"><i class="fas fa-home"></i></i>&nbsp; Home</a>
             <a title="Gerenciar Sobre Nos" class="collapse-item" href="<?php echo base_url('restrita/about'); ?>"><i class="fas fa-question-circle"></i>&nbsp; Sobre Nós</a>
             <a title="Gerenciar Servicos" class="collapse-item" href="<?php echo base_url('restrita/services'); ?>"><i class="fas fa-wrench"></i></i>&nbsp; Serviços</a>
+            <a title="Gerenciar Blog" class="collapse-item" href="<?php echo base_url('restrita/blog'); ?>"><i class="far fa-newspaper"></i>&nbsp; Blog</a>          
+
             <a title="Gerenciar Contato" class="collapse-item" href="<?php echo base_url('restrita/contact'); ?>"><i class="fas fa-address-book"></i>&nbsp; Contato</a>          
           </div>
         </div>
@@ -52,7 +54,12 @@
           <div class="sidebar-heading">
             Configurações
           </div>
-
+          <!-- Nav Item - Usuarios -->
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('restrita/email')?>">
+            <i class="fas fa-envelope-open-text"></i>
+            <span>Email</span></a>
+          </li>
           <!-- Nav Item - Usuarios -->
           <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('restrita/usuarios')?>">

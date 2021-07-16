@@ -6,8 +6,8 @@
     <div class="row">
       <div class="col-lg-3 col-sm-6 sm-padding">
         <div class="widget-content">
-          <a href="#"><img src="assets/img/logo-light.png" alt="brand"></a>
-          <p>Building your own home is about desire, fantasy. But it’s achievable anyone can do it.</p>
+          <a href="<?php echo base_url('home') ?>"><img src="assets/img/logo-light.png" alt="brand"></a>
+          <p><?php echo $about->about_descricao ?></p>
         </div>
       </div>
       <div class="col-lg-2 col-sm-6 sm-padding">
@@ -39,11 +39,11 @@
         <div class="subscribe-box clearfix">
           <div class="subscribe-form-wrap">
             <div action="#" class="subscribe-form">
-              <input type="email" name="email" id="email" class="form-input" placeholder="Enter Your Email Address...">         
-              <button type="submit" class="submit-btn" id="butsave">Enviar</button>
+              <input type="email" name="newsletter_email" id="newsletter_email" class="form-input" placeholder="Enter Your Email Address...">         
+              <button type="submit" class="submit-btn" id="butsavenews">Enviar</button>
           
               <div id="subscribe-result">
-                <div class="alert alert-success alert-dismissible" id="success" style="display:none;">
+                <div class="alert alert-success alert-dismissible" id="news_success" style="display:none;">
                   <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                 </div>
                 
@@ -53,6 +53,7 @@
           </div>
         </div>
       </div>
+
     </div><!--End Row-->
   </div><!--End Container-->
 </section>
@@ -94,19 +95,28 @@
 <script src="<?php echo base_url('assets/js/main.js') ?>"></script>
 
 
+
+<!--Script save email-->
 <script>
     $(document).ready(function() {
         $('#butsave').on('click', function() {
         
+            var name = $('#name').val();
             var email = $('#email').val();
-            if(email!="" ){
+            var message = $('#message').val();
+        
+
+
+            if(name!="" && email!="" && message!=""   ){
                 $("#butsave").attr("disabled", "disabled");
                 $.ajax({
                     url: "<?php echo base_url("Home/savedata");?>",
                     type: "POST",
                     data: {
                         type: 1,
+                        name: name,
                         email: email,
+                        message: message,
                         
                     },
                     cache: false,
@@ -131,6 +141,54 @@
         });
     });
 </script>
+
+<!--Script save newsletteremail -->
+<script>
+    $(document).ready(function() {
+        $('#butsavenews').on('click', function() {
+        
+            
+            var newsletter_email = $('#newsletter_email').val();
+           
+
+
+            if(newsletter_email!="" ){
+                $("#butsavenews").attr("disabled", "disabled");
+                $.ajax({
+                    url: "<?php echo base_url("Home/savenewsletter");?>",
+                    type: "POST",
+                    data: {
+                        type: 1,
+                       
+                        newsletter_email: newsletter_email,
+                        
+                        
+                    },
+                    cache: false,
+                    success: function(dataResult){
+                        var dataResult = JSON.parse(dataResult);
+                        if(dataResult.statusCode==200){
+                            $("#butsavenews").removeAttr("disabled");
+                            $('#fupForm').find('input:text').val('');
+                            $("#news_success").show();
+                            $('#news_success').html('Email cadastrada com sucesso !'); 						
+                        }
+                        else if(dataResult.statusCode==201){
+                        alert("Error occured !");
+                        }
+                        
+                    }
+                });
+            }
+            else{
+                alert('Preencher os campos !');
+            }
+        });
+    });
+</script>
+<script>
+    CKEDITOR.replace('blog_body'); 
+  </script>
 </body>
 
 <!-- index.html  29 Nov 2019 03:30:38 GMT -->

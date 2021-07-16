@@ -13,13 +13,16 @@ class About extends CI_Controller {
 	{
 
 		$data = array(
-			'about' => $this->core_model->get_by_id('about', array('about_id'=>1))  , 
+			'about' => $this->core_model->get_by_id('about', array('about_id'=>1)), 
 			'sistema' => $this->core_model->get_by_id('sistema', array('sistema_id'=>1)), 
 
 		); 
 		
-		
-
+		/*
+		echo '<pre>'; 
+		print_r($data['about']);
+		exit();
+ 		*/
 		$this->load->view('layout/header', $data);
 		$this->load->view('about'); 
 		$this->load->view('layout/footer');

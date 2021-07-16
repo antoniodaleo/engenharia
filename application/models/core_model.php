@@ -108,4 +108,31 @@
 
             return $codigo;
         }
+
+
+        public function get_email($tabela = null){
+            if($tabela){
+                $this->db->limit(10); 
+                $this->db->order_by('email_id', 'desc');
+                return $this->db->get($tabela)->result();
+   
+            }else{
+                return false; 
+            }
+           
+        }
+
+        public function get_all_email($tabela = null){
+            if($tabela){ 
+                
+                $this->db->order_by('email_id', 'desc');
+                $query = $this->db->get($tabela); 
+                return $query->result();
+
+                
+            }else{
+                return false; 
+            }
+           
+        }
     }

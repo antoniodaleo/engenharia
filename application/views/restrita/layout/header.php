@@ -31,8 +31,7 @@
     <?php endforeach; ?>
   <?php endif; ?>
   
-  <script src="http://cdn.ckeditor.com/4.5.11/standart/ckeditor.js"></script>
-  
+  <script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>  
 </head>
 
 <body id="page-top">

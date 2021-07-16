@@ -18,20 +18,11 @@ class Contact extends CI_Controller {
 		); 
 
 
-		$this->load->view('layout/header', $data);
-		$this->load->view('contact'); 
-		$this->load->view('layout/footer');
+		$this->load->view('restrita/layout/header', $data);
+		$this->load->view('restrita/contact'); 
+		$this->load->view('restrita/layout/footer');
 	}
 
-	public function savedata()
-	{
-		if($this->input->post('type')==1)
-		{
-			$email=$this->input->post('email');
-			$this->Crud_model->saverecords($email);	
-			echo json_encode(array(
-				"statusCode"=>200
-			));
-		} 
-	}
+
+
 }

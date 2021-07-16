@@ -23,7 +23,7 @@
             <div class="col-lg-6 sm-padding">
             <ul class="about-promo">
                 <li class="about-promo-item wow fadeInUp">
-                    <i class="flaticon-factory"></i>
+                    <i class=" <?php echo $about->about_icona_1?> "></i>
                     <div>
                         <h3><?php echo $about->about_qld_1 ?></h3>
                         <p><?php echo $about->about_descricao_qld_1 ?></p>
@@ -31,7 +31,7 @@
                 </li>
 
                 <li class="about-promo-item wow fadeInUp" data-wow-delay="300ms">
-                    <i class="flaticon-worker"></i>
+                    <i class="<?php echo $about->about_icona_2 ?>"></i>
                     <div>
                         <h3><?php echo $about->about_qld_2 ?></h3>
                         <p><?php echo $about->about_descricao_qld_2 ?></p>
@@ -39,7 +39,7 @@
                 </li>
                 
                 <li class="about-promo-item wow fadeInUp" data-wow-delay="500ms">
-                    <i class="flaticon-gear"></i>
+                    <i class="<?php echo $about->about_icona_3 ?>"></i>
                     <div>
                         <h3><?php echo $about->about_qld_3 ?></h3>
                         <p><?php echo $about->about_descricao_qld_3 ?></p>

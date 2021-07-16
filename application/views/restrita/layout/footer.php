@@ -64,7 +64,7 @@
   <?php endif; ?>
 
   <script>
-    CKEDITOR.replace('post_body'); 
+    CKEDITOR.replace('blog_body'); 
   </script>
 
 </body>

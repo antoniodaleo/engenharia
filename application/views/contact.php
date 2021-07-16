@@ -8,35 +8,43 @@
     <div class="col-md-6 padding-15">
     <div class="contact-info">
     <h2>Entre em contato conosco <br>envia uma mensagem!</h2>
-    <p>Redison is a different kind of architecture practice. Founded by LoganCee in 1991, we’re an employee-owned firm pursuing a democratic design process that values everyone’s input.</p>
-    <h3>Rua araujo Torreão, 547 <br>Fortaleza, CE </h3>
-    <h4><span>Email:</span> lobato@lobato.com <br> <span>Telefone:</span> +85 98860 1287<br> <span>Fax:</span> +88 (0) 202 0000 001</h4>
+    <p><?php echo $about->about_descricao ?></p>
+    <h3><?php echo $sistema->sistema_endereco ?>, <?php echo $sistema->sistema_numero ?> <br><?php echo $sistema->sistema_cidade ?>, <?php echo $sistema->sistema_estado ?> </h3>
+    <h4><span>Email:</span> <?php echo $sistema->sistema_email ?> <br> <span>Telefone:</span> <?php echo $sistema->sistema_telefone_movel ?><br> </h4>
     </div>
     </div>
+
     <div class="col-md-6 padding-15">
-    <div class="contact-form">
-    <form action="#" method="post" id="ajax_form" class="form-horizontal">
-    <div class="form-group colum-row row">
-    <div class="col-sm-6">
-        <input type="text" id="name" name="name" class="form-control" placeholder="Name" required>
-    </div>
-    <div class="col-sm-6">
-        <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
-    </div>
-    </div>
-    <div class="form-group row">
-    <div class="col-md-12">
-    <textarea id="message" name="message" cols="30" rows="5" class="form-control message" placeholder="Message" required></textarea>
-    </div>
-    </div>
-    <div class="form-group row">
-    <div class="col-md-12">
-    <button id="submit" class="default-btn" type="submit">Send Message</button>
-    </div>
-    </div>
-    <div id="form-messages" class="alert" role="alert"></div>
-    </form>
-    </div>
+        <div class="contact-form">
+        <div class="form-horizontal">
+
+            
+
+            <div class="form-group colum-row row">
+                <div class="col-sm-6">
+                    <input type="text" id="name" name="name" class="form-control" placeholder="Nome" required>
+                </div>
+                <div class="col-sm-6">
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-12">
+                    <textarea id="message" name="message" cols="30" rows="5" class="form-control message" placeholder="Mensagem" required></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-12">
+                    <button id="butsave" class="default-btn" type="submit">Enviar</button>
+                </div>
+            </div>
+
+            <div class="alert alert-success alert-dismissible" id="success" style="display:none;">
+	            <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+	        </div>
+
+        </div>
+        </div>
     </div>
     </div>
     </div>

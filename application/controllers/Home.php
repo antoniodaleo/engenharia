@@ -12,7 +12,9 @@ class Home extends CI_Controller {
 	public function index()
 	{
 		$data = array(
+			'about' => $this->core_model->get_by_id('about', array('about_id'=>1))  , 
 			'sistema' => $this->core_model->get_by_id('sistema', array('sistema_id'=>1)), 
+			'servico' => $this->core_model->get_all('service'), 
 		);
 
 		/* 
@@ -30,8 +32,22 @@ class Home extends CI_Controller {
 	{
 		if($this->input->post('type')==1)
 		{
+			$name=$this->input->post('name');
 			$email=$this->input->post('email');
-			$this->Crud_model->saverecords($email);	
+			$message=$this->input->post('message');
+			$this->Crud_model->saverecords($name,$email,$message);	
+			echo json_encode(array(
+				"statusCode"=>200
+			));
+		} 
+	}
+
+	public function savenewsletter()
+	{
+		if($this->input->post('type')==1)
+		{
+			$newsletter_email=$this->input->post('newsletter_email');
+			$this->Crud_model->savenewsletter_email($newsletter_email);	
 			echo json_encode(array(
 				"statusCode"=>200
 			));

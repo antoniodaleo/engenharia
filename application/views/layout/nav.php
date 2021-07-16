@@ -1,13 +1,13 @@
-<header class="header">
+<header class="header" id="header">
 <div class="primary-header">
 <div class="container">
 <div class="primary-header-inner">
 <div class="header-logo">
-<a href="#"><img src="<?php echo base_url('assets/img/logo-dark.png') ?>" alt="Engenharia Lobato"></a>
+<a href="<?php echo base_url('/') ?>"><img src="<?php echo base_url('assets/img/logo-dark.png') ?>" alt="Engenharia Lobato"></a>
 </div>
 <div class="header-menu-wrap">
 <ul class="dl-menu">
-<li><a href="<?php echo base_url('home') ?>">Home</a>
+<li><a href="<?php echo base_url('/') ?>">Home</a>
 </li>
 
 

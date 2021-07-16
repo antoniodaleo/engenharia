@@ -31,14 +31,14 @@
         <div class="slider-content-wrap d-flex align-items-center text-center">
           <div class="container">
             <div class="slider-content">
-            <div class="dl-caption medium"><div class="inner-layer"><div data-animation="fade-in-top" data-delay="1s">Manutenção Industrial</div></div></div>
-            <div class="dl-caption big"><div class="inner-layer"><div data-animation="fade-in-bottom" data-delay="2s">Lobato Engenharia</div></div>
+            <div class="dl-caption medium"><div class="inner-layer"><div data-animation="fade-in-top" data-delay="1s"><?php  echo $about->about_subtitulo ?></div></div></div>
+            <div class="dl-caption big"><div class="inner-layer"><div data-animation="fade-in-bottom" data-delay="2s"><?php echo $about->about_titulo ?></div></div>
             </div>
             <div class="dl-caption big"><div class="inner-layer"><div data-animation="fade-in-bottom" data-delay="2.5s">Operamos no setor Industrial</div></div></div>
-            <div class="dl-caption small"><div class="inner-layer"><div data-animation="fade-in-bottom" data-delay="3s">Especialista em turbinas e rafinarias <br>, estruturas metalicas.</div></div></div>
+            <div class="dl-caption small"><div class="inner-layer"><div data-animation="fade-in-bottom" data-delay="3s">Especialista em turbinas e rafinarias <br>estruturas metalicas.</div></div></div>
             <div class="dl-btn-group">
             <div class="inner-layer">
-            <a href="<?php echo base_url('contact') ?>" class="dl-btn" data-animation="fade-in-bottom" data-delay="3.5s">Faça um preventivo <i class="arrow_right"></i></a>
+            <a href="<?php echo base_url('contact') ?>" class="dl-btn" data-animation="fade-in-bottom" data-delay="3.5s">Faça um preventivo</a>
             </div>
           </div>
         </div>
@@ -77,34 +77,36 @@
 
       <div class="col-lg-6 sm-padding">
         <div class="about-content wow fadeInLeft">
-          <h2>Lobato Engenharia</h2>
-          <p>Trabalhamos neste setor desde 2007, Trabalhamos em equipe, respeitamos regras e etica de negocio</p>
+          <h2><?php echo $about->about_titulo ?></h2>
+          <p><?php echo $about->about_descricao ?></p>
           <a href="<?php echo base_url('about') ?>" class="default-btn">Sobre Nós</a>
         </div>
       </div>
 
       <div class="col-lg-6 sm-padding">
         <ul class="about-promo">
+
+         
           <li class="about-promo-item wow fadeInUp">
-            <i class="flaticon-factory"></i>
+            <i class=" <?php echo $about->about_icona_1?>"></i>
             <div>
-              <h3>Manutenção Industrial</h3>
-              <p>We are committed to building a sustainable future by fostering a collaborative spirit.</p>
+              <h3><?php echo $about->about_qld_1 ?></h3>
+              <p><?php echo $about->about_descricao_qld_1 ?></p>
             </div>
           </li>
+        
           <li class="about-promo-item wow fadeInUp" data-wow-delay="300ms">
-            <i class="flaticon-worker"></i>
-
+            <i class=" <?php echo $about->about_icona_2?>"></i>
             <div>
-              <h3>Ao serviço do cliente</h3>
-              <p>We are committed to building a sustainable future by fostering a collaborative spirit.</p>
+              <h3><?php echo $about->about_qld_2 ?></h3>
+              <p><?php echo $about->about_descricao_qld_2 ?></p>
             </div>
           </li>
           <li class="about-promo-item wow fadeInUp" data-wow-delay="500ms">
-            <i class="flaticon-gear"></i>
+            <i class=" <?php echo $about->about_icona_3?>"></i>
             <div>
-              <h3>Serviços ecologicos</h3>
-              <p>We are committed to building a sustainable future by fostering a collaborative spirit.</p>
+              <h3><?php echo $about->about_qld_3 ?></h3>
+              <p><?php echo $about->about_descricao_qld_3 ?></p>
             </div>
           </li>
         </ul>
@@ -120,21 +122,26 @@
     <div class="row">
       <div class="col-lg-12">
         <div id="service-carousel" class="service-carousel box-shadow owl-carousel">
+        
         <div class="service-item">
-        <div class="service-icon">
-        <i class="flaticon-3d-printer"></i>
+          <div class="service-icon">
+            <i class="flaticon-3d-printer"></i>
+          </div>
+          <h3>Laudo Técnico de manutenção Industrial</h3>
+          <p>We are committed a sustainable future fostering a collaborative spirit.</p>
+          <a href="#" class="read-more">Read More</a>
+         
+          <div class="overlay-icon">
+            <i class="flaticon-3d-printer"></i>
+          </div>
         </div>
-        <h3>Laudo Técnico de manutenção Industrial</h3>
-        <p>We are committed a sustainable future fostering a collaborative spirit.</p>
-        <a href="#" class="read-more">Read More</a>
-        <div class="overlay-icon">
-        <i class="flaticon-3d-printer"></i>
-        </div>
-        </div>
+
+
         <div class="service-item">
         <div class="service-icon">
         <i class="flaticon-industrial-robot"></i>
       </div>
+
 
       <h3>Manutenção em Tanque </h3>
       <p>We are committed a sustainable future fostering a collaborative spirit.</p>
